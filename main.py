@@ -109,7 +109,7 @@ def plot_results(rlhf_prob, rlhf_det, ml, title, filename):
 
 # Experiment runner
 def run_experiment(distribution, label, filename):
-    data = generate_dataset(2000, distribution)
+    data = generate_dataset(pow(10, 6), distribution)
     rlhf_prob = rlhf_scores(data)
     rlhf_det = rlhf_argmax(rlhf_prob)
     M = build_margin_matrix(data)
